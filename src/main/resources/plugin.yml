@@ -1,0 +1,7 @@
+name: ELDTester
+main: com.ericlam.mc.eldtester.ELDTester
+version: ${project.version}
+depend: [ELDependenci]
+commands:
+  test:
+    description: test command
