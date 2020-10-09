@@ -42,10 +42,9 @@ public class TesterRegistry implements ComponentsRegistry {
     }
 
     @Override
-    public void registerListeners(CommandRegistry commandRegistry) {
+    public void registerListeners() {
+
     }
 
-    @Override
-    public void registerConfigs() {
-    }
+
 }
