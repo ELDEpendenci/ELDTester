@@ -18,7 +18,7 @@ public class TestConfigReloadCommand implements CommandNode {
 
     @Override
     public void execute(CommandSender commandSender) {
-        config.controller.reload();
+        config.getController().reload();
         commandSender.sendMessage("reload completed");
     }
 }

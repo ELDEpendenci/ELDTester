@@ -33,7 +33,7 @@ public class TestConfigEditCommand  implements CommandNode {
         config.box.size = random.nextInt();
 
         try {
-            config.controller.save();
+            config.getController().save();
             commandSender.sendMessage("save completed");
         } catch (IOException e) {
             e.printStackTrace();

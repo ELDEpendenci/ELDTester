@@ -13,6 +13,10 @@
             <id>papermc</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
+        <repository>
+            <id>nexus</id>
+            <url>https://nexus.chu77.xyz/repository/plugins/</url>
+        </repository>
     </repositories>
 
 
@@ -26,9 +30,12 @@
         <dependency>
             <groupId>com.ericlam.mc</groupId>
             <artifactId>eld-api</artifactId>
-            <version>1.0</version>
+            <version>0.0.1</version>
+            <scope>provided</scope>
+            <!--
             <scope>system</scope>
             <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eld-api/target/eld-api-0.0.1.jar</systemPath>
+            -->
         </dependency>
         <dependency>
             <groupId>javax.inject</groupId>
