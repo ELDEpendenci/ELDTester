@@ -28,7 +28,7 @@
             <artifactId>eld-api</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eld-api/target/eld-api-1.0-SNAPSHOT.jar</systemPath>
+            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eld-api/target/eld-api-0.0.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>javax.inject</groupId>

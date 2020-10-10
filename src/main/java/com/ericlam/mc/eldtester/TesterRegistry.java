@@ -2,7 +2,10 @@ package com.ericlam.mc.eldtester;
 
 import com.ericlam.mc.eld.registrations.CommandRegistry;
 import com.ericlam.mc.eld.registrations.ComponentsRegistry;
+import com.ericlam.mc.eld.registrations.ListenerRegistry;
 import com.ericlam.mc.eldtester.command.*;
+
+import java.util.List;
 
 public class TesterRegistry implements ComponentsRegistry {
 
@@ -38,12 +41,20 @@ public class TesterRegistry implements ComponentsRegistry {
                 cc.command(TestServiceHelloCommand.class);
 
             });
+
+            c.command(TestSchedulerCommand.class, cc ->{
+
+                cc.command(TestSchedulerOneCommand.class);
+
+                cc.command(TestSchedulerTwoCommand.class);
+
+            });
         });
     }
 
     @Override
-    public void registerListeners() {
-
+    public void registerListeners(ListenerRegistry listenerRegistry) {
+        listenerRegistry.listeners(List.of(TestListeners.class));
     }
 
 

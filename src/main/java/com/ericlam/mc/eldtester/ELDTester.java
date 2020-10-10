@@ -5,6 +5,7 @@ import com.ericlam.mc.eld.annotations.ELDPlugin;
 import com.ericlam.mc.eld.exceptions.ArgumentParseException;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -12,8 +13,11 @@ import java.util.ArrayList;
 @ELDPlugin(registry = TesterRegistry.class)
 public class ELDTester extends JavaPlugin {
 
+    public static Plugin plugin;
+
     @Override
     public void onEnable() {
+        plugin = this;
         var provider = ELDependenci.getApi().register(this, service -> {
             service.addConfiguration(TestConfig.class);
             service.addService(MyService.class, MyServiceImpl.class);
