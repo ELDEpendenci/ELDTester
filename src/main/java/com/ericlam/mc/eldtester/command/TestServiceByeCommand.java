@@ -19,7 +19,7 @@ public class TestServiceByeCommand implements CommandNode {
     @Inject
     private Map<String, MyService> myService;
 
-    @CommandArg(order = 0)
+    @CommandArg(order = 0, optional = true)
     private boolean b = false;
 
     @Override

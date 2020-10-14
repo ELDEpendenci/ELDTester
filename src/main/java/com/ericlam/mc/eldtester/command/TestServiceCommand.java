@@ -10,7 +10,6 @@ import org.bukkit.command.CommandSender;
 )
 public class TestServiceCommand implements CommandNode {
 
-
     @Override
     public void execute(CommandSender commandSender) {
     }

@@ -19,20 +19,4 @@ public class TestListeners implements Listener {
     }
 
 
-    @EventHandler
-    public void onPlayerChat2(AsyncPlayerChatEvent e) {
-        e.getPlayer().sendMessage("hi");
-    }
-
-    @EventHandler
-    public void onPlayerChat3(AsyncPlayerChatEvent e) {
-        e.getPlayer().sendMessage("hi2");
-    }
-
-    @EventHandler
-    public void onPlayerChat4(AsyncPlayerChatEvent e) {
-        e.getPlayer().sendMessage("hi3");
-    }
-
-
 }

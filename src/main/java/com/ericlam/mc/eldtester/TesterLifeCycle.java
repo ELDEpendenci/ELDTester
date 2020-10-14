@@ -7,8 +7,13 @@ import javax.inject.Inject;
 
 public class TesterLifeCycle implements ELDLifeCycle {
 
+    private final TesterSingleton singleton;
+
     @Inject
-    private TesterSingleton singleton;
+    public TesterLifeCycle(TesterSingleton singleton){
+        this.singleton = singleton;
+        singleton.setKey("start", "started a insertion in constructor");
+    }
 
     @Inject
     private TestConfig config;

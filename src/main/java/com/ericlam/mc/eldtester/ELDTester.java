@@ -7,7 +7,6 @@ import com.ericlam.mc.eld.annotations.ELDPlugin;
 import com.ericlam.mc.eld.exceptions.ArgumentParseException;
 
 import java.util.Map;
-import java.util.regex.Pattern;
 
 
 @ELDPlugin(
@@ -23,19 +22,24 @@ public class ELDTester extends ELDBukkitPlugin {
                 "A", MyServiceA.class,
                 "B", MyServiceB.class
         ));
+        serviceCollection.addServices(StorageService.class, Map.of("mysql", MySQLStorageService.class, "yaml", YamlStorageService.class));
         serviceCollection.addSingleton(TesterSingleton.class);
+        serviceCollection.addService(IService.class, IServiceImpl.class);
     }
 
     @Override
     protected void manageProvider(ManagerProvider provider) {
         var parser = provider.getArgumentManager();
-        parser.registerParser(String.class, "a-z", ((iterator, commandSender, p) -> {
-            String arg = iterator.next();
-            var result = Pattern.compile("^[a-z]*$").matcher(arg);
-            if (result.find()){
-                return result.group();
-            }else{
-                throw new ArgumentParseException("cannot find");
+        parser.registerParser(String.class, "message", (iterator, commandSender, p) -> {
+            StringBuilder builder = new StringBuilder();
+            iterator.forEachRemaining(s -> builder.append(s).append(" "));
+            return builder.toString();
+        });
+        parser.registerParser(Integer.class, ((iterator, commandSender, argParser) -> {
+            try{
+                return Integer.parseInt(iterator.next());
+            }catch (NumberFormatException e){
+                throw new ArgumentParseException("不是有效的 integer.");
             }
         }));
     }
