@@ -2,16 +2,16 @@ package com.ericlam.mc.eldtester;
 
 import org.bukkit.command.CommandSender;
 
-public class MyServiceImpl implements MyService {
+public class MyServiceA implements MyService {
 
 
     @Override
     public void sayHelloTo(CommandSender sender) {
-        sender.sendMessage("hello world!!!");
+        sender.sendMessage("hello world A!!!");
     }
 
     @Override
     public void sayGoodBye(CommandSender sender) {
-        sender.sendMessage("good bye!!!");
+        sender.sendMessage("good bye A!!!");
     }
 }

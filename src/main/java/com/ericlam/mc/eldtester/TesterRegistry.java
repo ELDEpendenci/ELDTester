@@ -54,7 +54,12 @@ public class TesterRegistry implements ComponentsRegistry {
 
     @Override
     public void registerListeners(ListenerRegistry listenerRegistry) {
-        listenerRegistry.listeners(List.of(TestListeners.class));
+        listenerRegistry.listeners(List.of(
+                TestListeners.class
+        ));
+        listenerRegistry.ELDListeners(List.of(
+                TestELDListener.class
+        ));
     }
 
 

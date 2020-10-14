@@ -30,13 +30,21 @@
         <dependency>
             <groupId>com.ericlam.mc</groupId>
             <artifactId>eld-api</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.5</version>
             <scope>provided</scope>
             <!--
             <scope>system</scope>
-            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eld-api/target/eld-api-0.0.1.jar</systemPath>
-            -->
+            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eld-api/target/eld-api-0.0.4.jar</systemPath>
+             -->
         </dependency>
+        <!--
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+            <scope>provided</scope>
+        </dependency>
+        -->
     </dependencies>
 
     <build>
