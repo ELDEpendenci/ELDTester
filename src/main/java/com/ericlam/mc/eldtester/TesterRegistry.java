@@ -34,13 +34,7 @@ public class TesterRegistry implements ComponentsRegistry {
 
             });
 
-            c.command(TestServiceCommand.class, cc -> {
-
-                cc.command(TestServiceByeCommand.class);
-
-                cc.command(TestServiceHelloCommand.class);
-
-            });
+            c.command(TestSleepCommand.class);
 
             c.command(TestSchedulerCommand.class, cc ->{
 

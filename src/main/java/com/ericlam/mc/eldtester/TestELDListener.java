@@ -2,7 +2,6 @@ package com.ericlam.mc.eldtester;
 
 import com.ericlam.mc.eld.components.ELDListener;
 import com.ericlam.mc.eld.components.EventListeners;
-import org.bukkit.event.Cancellable;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -13,12 +12,13 @@ public class TestELDListener implements ELDListener {
     @Override
     public void defineNodes(EventListeners eventListeners) {
         eventListeners.listen(PlayerJoinEvent.class)
+                .expireAfter(3)
                 .filter(e -> e.getPlayer().hasPermission("player.join.silent"))
                 .handle(e -> e.setJoinMessage(null));
 
         eventListeners.listen(AsyncPlayerChatEvent.class)
                 .priority(EventPriority.MONITOR)
-                .filter(Cancellable::isCancelled)
+                .filter(e -> !e.isCancelled())
                 .filter(e -> e.getPlayer().hasPermission("player.chat"))
                 .fork()
                 .ifTrue(e -> e.getPlayer().sendMessage("you have player.chat permission"))
@@ -31,12 +31,12 @@ public class TestELDListener implements ELDListener {
                 .ifFalse(this::onPlayerQuitIsNotVIP);
     }
 
-    public void onPlayerQuitIsVIP(PlayerQuitEvent event){
-        event.setQuitMessage("vip left the server: "+event.getPlayer().getName());
+    public void onPlayerQuitIsVIP(PlayerQuitEvent event) {
+        event.setQuitMessage("vip left the server: " + event.getPlayer().getName());
     }
 
 
-    public void onPlayerQuitIsNotVIP(PlayerQuitEvent event){
-        event.setQuitMessage("player left the server: "+event.getPlayer().getName());
+    public void onPlayerQuitIsNotVIP(PlayerQuitEvent event) {
+        event.setQuitMessage("player left the server: " + event.getPlayer().getName());
     }
 }
