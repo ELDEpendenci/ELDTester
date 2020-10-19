@@ -16,10 +16,8 @@ public class ELDTester extends ELDBukkitPlugin {
     @Override
     protected void bindServices(ServiceCollection serviceCollection) {
         serviceCollection.addConfiguration(TestConfig.class);
+        serviceCollection.addGroupConfiguration(BookConfig.class);
         serviceCollection.addSingleton(TesterSingleton.class);
-        serviceCollection.addService(LogService.class, LoggerA.class);
-        serviceCollection.addService(LogService.class, LoggerB.class);
-        serviceCollection.addService(LogService.class, LoggerC.class);
     }
 
     @Override

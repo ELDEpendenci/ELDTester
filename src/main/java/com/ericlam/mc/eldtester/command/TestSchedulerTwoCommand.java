@@ -21,15 +21,15 @@ public class TestSchedulerTwoCommand implements CommandNode {
     @Override
     public void execute(CommandSender commandSender) {
         commandSender.sendMessage("starting scheduler");
-        service.callAsync(() -> {
+        service.callAsync(ELDTester.getProvidingPlugin(ELDTester.class), () -> {
             commandSender.sendMessage("sleep 5 seconds in async");
             Thread.sleep(5000);
             return "abc";
-        }, ELDTester.getProvidingPlugin(ELDTester.class)).thenRunSync(result -> {
+        }).thenApplySync(result -> {
             commandSender.sendMessage("get the result "+result+" in sync!");
             commandSender.sendMessage("sending number 123");
             return 123;
-        }).thenRunAsync(re -> {
+        }).thenApplyAsync(re -> {
             commandSender.sendMessage("received "+re+" in async!");
             commandSender.sendMessage("add 123 into "+re+" with 5 secs");
             Thread.sleep(5000);
@@ -37,7 +37,6 @@ public class TestSchedulerTwoCommand implements CommandNode {
         }).thenRunSync(res -> {
             commandSender.sendMessage("received "+res+" in sync!");
             commandSender.sendMessage("the final result is "+res);
-            return null;
         }).join();
     }
 }
