@@ -14,6 +14,8 @@ public class TesterRegistry implements ComponentsRegistry {
     public void registerCommand(CommandRegistry commandRegistry) {
         commandRegistry.command(TestCommand.class, c -> {
 
+            c.command(TestLanguageCommand.class);
+
             c.command(TestSayCommand.class);
 
             c.command(TestCalculateCommand.class, cc -> {

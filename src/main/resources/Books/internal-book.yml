@@ -1,0 +1,6 @@
+title: "This book is in jar"
+author: "the author of ELDTester"
+description: "this book is in jar and copy to folder when loaded"
+pages: 999
+contents:
+  - "NO CONTENT"

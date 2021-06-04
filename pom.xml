@@ -6,7 +6,7 @@
 
     <groupId>com.ericlam.mc</groupId>
     <artifactId>ELDTester</artifactId>
-    <version>0.0.7.2</version>
+    <version>0.0.8</version>
 
     <repositories>
         <repository>
@@ -30,21 +30,19 @@
         <dependency>
             <groupId>org.eldependenci</groupId>
             <artifactId>eldependenci-framework</artifactId>
-            <version>0.0.7</version>
+            <version>0.0.8</version>
             <!-- <scope>provided</scope> -->
-            <!--
             <scope>system</scope>
-            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eldependenci/target/eldependenci-0.0.7.jar</systemPath>
-            -->
+            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eldependenci-framework/target/eldependenci-framework-0.0.8.jar</systemPath>
         </dependency>
-        <!--
+
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
             <version>1</version>
             <scope>provided</scope>
         </dependency>
-        -->
+
     </dependencies>
 
     <build>

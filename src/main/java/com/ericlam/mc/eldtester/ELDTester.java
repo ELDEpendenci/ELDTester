@@ -18,23 +18,11 @@ public class ELDTester extends ELDBukkitPlugin {
         serviceCollection.addConfiguration(TestConfig.class);
         serviceCollection.addGroupConfiguration(BookConfig.class);
         serviceCollection.addSingleton(TesterSingleton.class);
+        serviceCollection.addMultipleLanguages(TesterMultiLang.class);
     }
 
     @Override
     protected void manageProvider(ManagerProvider provider) {
-        var parser = provider.getArgumentManager();
-        parser.registerParser(String.class, "message", (iterator, commandSender, p) -> {
-            StringBuilder builder = new StringBuilder();
-            iterator.forEachRemaining(s -> builder.append(s).append(" "));
-            return builder.toString();
-        });
-        parser.registerParser(Integer.class, ((iterator, commandSender, argParser) -> {
-            try {
-                return Integer.parseInt(iterator.next());
-            } catch (NumberFormatException e) {
-                throw new ArgumentParseException("不是有效的 integer.");
-            }
-        }));
 
     }
 }

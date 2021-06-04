@@ -5,7 +5,10 @@ import com.ericlam.mc.eld.components.GroupConfiguration;
 
 import java.util.List;
 
-@GroupResource(folder = "Books")
+@GroupResource(
+        folder = "Books",
+        preloads = {"internal-book"}
+)
 public class BookConfig extends GroupConfiguration {
 
     public String title;
