@@ -18,15 +18,11 @@ public class TestCalculateAddCommand implements CommandNode {
     @CommandArg(order = 0)
     private int one;
 
-    @CommandArg(order = 1)
-    private int two;
-
-    @RemainArgs
-    private List<String> args;
+    @CommandArg(order = 1, optional = true)
+    private int two = 0;
 
     @Override
     public void execute(CommandSender commandSender) {
         commandSender.sendMessage(one+" + "+two+" = "+(one + two));
-        commandSender.sendMessage("remainArgs: "+args.toString());
     }
 }

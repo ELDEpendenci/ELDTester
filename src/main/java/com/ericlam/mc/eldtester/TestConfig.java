@@ -6,8 +6,6 @@ import org.bukkit.ChatColor;
 
 @Resource(locate = "config.yml")
 public class TestConfig extends Configuration {
-    public boolean useMySQL;
-    public String host;
     public String name;
     public int number;
     public boolean bool;

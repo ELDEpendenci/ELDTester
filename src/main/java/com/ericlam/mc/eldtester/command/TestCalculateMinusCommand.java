@@ -12,11 +12,11 @@ import org.bukkit.command.CommandSender;
 )
 public class TestCalculateMinusCommand implements CommandNode {
 
-    @CommandArg(order = 0, labels = {"first value"})
+    @CommandArg(order = 0)
     private int one;
 
-    @CommandArg(order = 1, labels = {"second value"}, optional = true)
-    private int two = 55;
+    @CommandArg(order = 1, optional = true)
+    private int two = 0;
 
     @Override
     public void execute(CommandSender commandSender) {

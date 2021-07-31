@@ -1,7 +1,8 @@
 name: ELDTester
 main: com.ericlam.mc.eldtester.ELDTester
 version: ${project.version}
-depend: [ELDependenci]
+depend: [ELDependenci, eld-sql-plugin]
+api-version: "1.16"
 commands:
   test:
     description: test command

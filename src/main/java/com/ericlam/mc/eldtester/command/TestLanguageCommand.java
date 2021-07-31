@@ -3,11 +3,11 @@ package com.ericlam.mc.eldtester.command;
 import com.ericlam.mc.eld.annotations.CommandArg;
 import com.ericlam.mc.eld.annotations.Commander;
 import com.ericlam.mc.eld.components.CommandNode;
-import com.ericlam.mc.eldtester.TesterMultiLang;
+import com.ericlam.mc.eldtester.I18nService;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import javax.inject.Inject;
-import java.util.Map;
 
 @Commander(
         name = "lang",
@@ -17,20 +17,16 @@ public class TestLanguageCommand implements CommandNode {
 
 
     @Inject
-    private Map<String, TesterMultiLang> multiLangMap;
+    private I18nService i18nService;
+
+    @CommandArg(order = 0)
+    private Player player;
 
     @CommandArg(order = 1)
-    private String language;
+    private String path;
 
     @Override
     public void execute(CommandSender commandSender) {
-        TesterMultiLang multiLang = multiLangMap.get(language);
-        if (multiLang == null){
-            commandSender.sendMessage("unknown language");
-        }else{
-            commandSender.sendMessage(multiLang.getLang().get("first"));
-            commandSender.sendMessage(multiLang.getLang().get("second"));
-            commandSender.sendMessage(multiLang.getLang().get("third"));
-        }
+        i18nService.sendMessage(player, path);
     }
 }
