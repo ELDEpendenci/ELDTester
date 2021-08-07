@@ -34,11 +34,9 @@ public class ELDTester extends ELDBukkitPlugin {
         serviceCollection.bindServiceProvider(Animal.class, AnimalProvider.class);
 
         SQLInstallation sql = serviceCollection.getInstallation(SQLInstallation.class);
-        sql.bindRepository(User.class, UserRepository.class);
 
-        sql.bindCustomImplements(UserRepository.class,
-                CustomARepoImpl.class, CustomBRepoImpl.class
-        );
+        sql.bindEntities(User.class);
+        sql.bindJpaRepository(UserRepository.class, CustomARepoImpl.class, CustomBRepoImpl.class);
 
     }
 

@@ -1,16 +1,17 @@
 package com.ericlam.mc.eldtester.sql;
 
-import com.ericlam.mc.eldtester.ELDTester;
-
 import javax.inject.Inject;
+import javax.inject.Provider;
+import javax.persistence.EntityManager;
 
 public class CustomARepoImpl implements CustomARepo {
 
     @Inject
-    private ELDTester eldTester;
+    private Provider<EntityManager> entityManagerProvider;
 
     @Override
-    public void myMethodA() {
-        eldTester.getLogger().info("A method from "+this.getClass());
+    public void doSpecialThing(User user) {
+        EntityManager em = entityManagerProvider.get();
+        // 使用 EntityManager 操作...
     }
 }

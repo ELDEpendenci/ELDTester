@@ -14,8 +14,8 @@ public class UserJpaService implements UserService {
         userRepository.save(user);
 
         // custom method
-        userRepository.myMethodA();
-        userRepository.myMethodB();
+        userRepository.doSpecialThing(user);
+        userRepository.doSomeThingCool(user);
     }
 
     @Override

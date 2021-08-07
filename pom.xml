@@ -40,14 +40,15 @@
         </dependency>
         <dependency>
             <groupId>org.eldependenci</groupId>
-            <artifactId>eld-sql</artifactId>
-            <version>0.0.4</version>
-            <!-- <scope>provided</scope> -->
-
+            <artifactId>eldependenci-sql</artifactId>
+            <version>0.0.5</version>
+            <scope>provided</scope>
+            <!--
             <scope>system</scope>
             <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci-sql/eldependenci-sql/target/eldependenci-sql-0.0.5.jar</systemPath>
+            -->
         </dependency>
-        <!-- only scope is system -->
+        <!--
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -60,7 +61,7 @@
             <version>2.5.3</version>
             <scope>provided</scope>
         </dependency>
-        <!-- -->
+        -->
 
     </dependencies>
 

@@ -10,9 +10,8 @@ public class CustomBRepoImpl implements CustomBRepo {
     @Inject
     private ELDTester eldTester;
 
-
     @Override
-    public void myMethodB() {
-        eldTester.getLogger().info("B method from "+this.getClass());
+    public void doSomeThingCool(User user) {
+        eldTester.getLogger().info(user.toString());
     }
 }
