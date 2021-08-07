@@ -12,6 +12,10 @@ public class UserJpaService implements UserService {
     @Override
     public void save(User user) {
         userRepository.save(user);
+
+        // custom method
+        userRepository.myMethodA();
+        userRepository.myMethodB();
     }
 
     @Override
