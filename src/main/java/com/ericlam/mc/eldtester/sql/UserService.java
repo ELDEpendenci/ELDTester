@@ -1,35 +1,16 @@
 package com.ericlam.mc.eldtester.sql;
 
-import chu77.eldependenci.sql.JpaFactoryService;
-import chu77.eldependenci.sql.SQLService;
-import com.ericlam.mc.eldtester.ELDTester;
-import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
-
-import javax.inject.Inject;
 import java.util.Optional;
 
+public interface UserService {
 
-public class UserService {
+    void save(User user);
 
-    private final UserRepository userRepository;
+    Optional<User> findByUsername(String username);
 
-    @Inject
-    public UserService(JpaFactoryService jpaFactoryService, SQLService sqlService) {
-        JpaRepositoryFactory factory = jpaFactoryService.getJpaFactory(ELDTester.MY_TAG);
-        this.userRepository = factory.getRepository(UserRepository.class);
-    }
+    Iterable<User> findAll();
 
-    public void save(User user) {
-        userRepository.save(user);
-    }
+    void deleteById(String username);
 
-    public Optional<User> findByUsername(String username) {
-        return userRepository.findById(username);
-    }
-
-    public Iterable<User> findAll() {
-        return userRepository.findAll();
-    }
-
-
+    boolean existByUsername(String username);
 }

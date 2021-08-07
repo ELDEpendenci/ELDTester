@@ -6,7 +6,7 @@
 
     <groupId>com.ericlam.mc</groupId>
     <artifactId>ELDTester</artifactId>
-    <version>0.0.8.1</version>
+    <version>0.1.1.1</version>
 
     <repositories>
         <repository>
@@ -30,25 +30,37 @@
         <dependency>
             <groupId>org.eldependenci</groupId>
             <artifactId>eldependenci-framework</artifactId>
-            <version>0.0.8</version>
+            <version>0.1.1</version>
             <scope>provided</scope>
+            <!-- scope>provided</scope -->
             <!--
             <scope>system</scope>
-            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eldependenci-framework/target/eldependenci-framework-0.0.8.jar</systemPath>
+            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eldependenci-framework/target/eldependenci-framework-0.1.1.jar</systemPath>
             -->
         </dependency>
         <dependency>
             <groupId>org.eldependenci</groupId>
             <artifactId>eld-sql</artifactId>
             <version>0.0.4</version>
+            <!-- <scope>provided</scope> -->
+
+            <scope>system</scope>
+            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci-sql/eldependenci-sql/target/eldependenci-sql-0.0.5.jar</systemPath>
+        </dependency>
+        <!-- only scope is system -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.5.5.Final</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.5.3</version>
             <scope>provided</scope>
         </dependency>
+        <!-- -->
 
     </dependencies>
 
