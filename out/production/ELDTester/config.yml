@@ -1,0 +1,7 @@
+name: "hello world"
+number: 12
+bool: true
+box:
+  name: "box abc"
+  size: 20
+  color: RED
