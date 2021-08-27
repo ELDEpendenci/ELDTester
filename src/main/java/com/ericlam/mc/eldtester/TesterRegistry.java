@@ -44,6 +44,10 @@ public class TesterRegistry implements ComponentsRegistry {
 
                 cc.command(TestBookReloadCommand.class);
 
+                cc.command(TestBookAddCommand.class);
+
+                cc.command(TestBookDeleteCommand.class);
+
             });
 
             c.command(TestSchedulerCommand.class, cc ->{

@@ -9,7 +9,7 @@ import java.util.List;
         folder = "Books",
         preloads = {"internal-book"}
 )
-public class BookConfig extends GroupConfiguration {
+public class Book extends GroupConfiguration {
 
     public String title;
     public String author;

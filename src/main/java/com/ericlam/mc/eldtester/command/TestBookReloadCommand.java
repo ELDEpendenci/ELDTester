@@ -1,12 +1,11 @@
 package com.ericlam.mc.eldtester.command;
 
 import com.ericlam.mc.eld.annotations.Commander;
+import com.ericlam.mc.eld.annotations.InjectPool;
 import com.ericlam.mc.eld.components.CommandNode;
-import com.ericlam.mc.eld.services.ConfigPoolService;
-import com.ericlam.mc.eldtester.BookConfig;
+import com.ericlam.mc.eld.configurations.GroupConfig;
+import com.ericlam.mc.eldtester.Book;
 import org.bukkit.command.CommandSender;
-
-import javax.inject.Inject;
 
 @Commander(
         name = "reload",
@@ -14,15 +13,12 @@ import javax.inject.Inject;
 )
 public class TestBookReloadCommand implements CommandNode {
 
-    @Inject
-    private ConfigPoolService service;
+    @InjectPool
+    private GroupConfig<Book> groupConfig;
 
     @Override
     public void execute(CommandSender commandSender) {
-        service.reloadPool(BookConfig.class).whenComplete((v, ex) ->{
-            if (ex != null) ex.printStackTrace();
-
-            commandSender.sendMessage("reload completed!");
-        });
+        groupConfig.fetch();
+        commandSender.sendMessage("reloaded");
     }
 }
