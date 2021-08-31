@@ -27,10 +27,6 @@ public class TestConfigEditCommand  implements CommandNode {
         config.bool = random.nextBoolean();
         config.name = UUID.randomUUID().toString();
         config.number = random.nextInt();
-        config.box = new TestConfig.Box();
-        config.box.color = ChatColor.values()[random.nextInt(ChatColor.values().length)];
-        config.box.name = UUID.randomUUID().toString()+" box";
-        config.box.size = random.nextInt();
 
         try {
             config.getController().save();

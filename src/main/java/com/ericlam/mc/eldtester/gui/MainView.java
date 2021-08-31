@@ -12,16 +12,17 @@ import org.bukkit.Material;
         template = "main",
         groupResource = GUITemplate.class
 )
-public class MainView implements View<String> { // 此界面裝載 String 作為數據
+public class MainView implements View<String> {
 
     @Override
     public void renderView(String s, UIContext context) {
-        ButtonFactory button = context.factory(ButtonFactory.class); //獲取 按鈕組件工廠
-        context.pattern('A') // 指定 Pattern A
-                .components( // 放入組件
-                        button.icon(Material.DIAMOND_BLOCK) // 設置鑽石方塊
-                                .title(s) // 設置顯示
-                                .create() // 創建組件
+        ButtonFactory button = context.factory(ButtonFactory.class);
+        context.pattern('A')
+                .components(
+                        button.icon(Material.DIAMOND_BLOCK)
+                                .title(s)
+                                .bind("say", "Have a nice day!") // 綁定屬性 say 為數值 "Have a nice day!"
+                                .create()
                 );
     }
 }

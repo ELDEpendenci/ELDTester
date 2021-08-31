@@ -1,8 +1,0 @@
-name: ELDTester
-main: com.ericlam.mc.eldtester.ELDTester
-version: 0.1.1.1
-depend: [ELDependenci, ELDependenci-SQL]
-api-version: "1.16"
-commands:
-  test:
-    description: test command

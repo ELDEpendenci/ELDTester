@@ -1,7 +1,25 @@
 name: "hello world"
 number: 12
 bool: true
-box:
-  name: "box abc"
-  size: 20
-  color: RED
+# 使用 Map 裝載
+boxes:
+  box1:
+    name: "box 1"
+    size: 1
+    color: RED
+  box2:
+    name: "box 2"
+    size: 2
+    color: BLUE
+  box3:
+    name: "box 3"
+    size: 3
+    color: ORANGE
+# 使用 List 裝載
+boxList:
+  - name: "box 1"
+    size: 1
+    color: ORANGE
+  - name: "box 2"
+    size: 2
+    color: ORANGE
