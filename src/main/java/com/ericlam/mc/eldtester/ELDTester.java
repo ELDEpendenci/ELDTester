@@ -5,14 +5,13 @@ import com.ericlam.mc.eld.ELDBukkitPlugin;
 import com.ericlam.mc.eld.ManagerProvider;
 import com.ericlam.mc.eld.ServiceCollection;
 import com.ericlam.mc.eld.annotations.ELDPlugin;
-import com.ericlam.mc.eld.services.ConfigPoolService;
 import com.ericlam.mc.eldgui.MVCInstallation;
-import com.ericlam.mc.eldtester.gui.*;
+import com.ericlam.mc.eldtester.gui.GUITemplate;
+import com.ericlam.mc.eldtester.gui.MainController;
+import com.ericlam.mc.eldtester.gui.MyOwnFilter;
 import com.ericlam.mc.eldtester.sql.*;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryInteractEvent;
 
-import java.util.List;
 import java.util.Map;
 
 

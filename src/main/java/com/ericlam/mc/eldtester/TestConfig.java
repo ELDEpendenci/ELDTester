@@ -4,12 +4,16 @@ import com.ericlam.mc.eld.annotations.Resource;
 import com.ericlam.mc.eld.components.Configuration;
 import org.bukkit.ChatColor;
 
+import java.util.List;
+import java.util.Map;
+
 @Resource(locate = "config.yml")
 public class TestConfig extends Configuration {
     public String name;
     public int number;
     public boolean bool;
-    public Box box;
+    public Map<String, Box> boxes;
+    public List<Box> boxList;
 
     public static class Box {
         public String name;
@@ -34,7 +38,8 @@ public class TestConfig extends Configuration {
                 "name='" + name + '\'' +
                 ", number=" + number +
                 ", bool=" + bool +
-                ", box=" + box +
+                ", boxes=" + boxes +
+                ", boxList=" + boxList +
                 '}';
     }
 }
