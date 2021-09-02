@@ -1,7 +1,7 @@
 name: "Main View"
 rows: 1
 pattern:
-  - ZZZZAZZZZ
+  - ZZZZAZZZB
 items:
   A:
     # 因為顯示數據來自 Controller, 因此在這裏不會實作物品
@@ -15,3 +15,6 @@ items:
       - "&e這個物品"
       - "&e只是裝飾"
     cancelMove: true
+  B:
+    material: DIAMOND_BLOCK
+    name: "&a遞交"

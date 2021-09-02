@@ -1,5 +1,6 @@
 package com.ericlam.mc.eldtester.gui;
 
+import com.ericlam.mc.eldgui.controller.MapAttribute;
 import com.ericlam.mc.eldgui.controller.UIController;
 import com.ericlam.mc.eldgui.event.ClickMapping;
 import com.ericlam.mc.eldgui.lifecycle.PostUpdateView;
@@ -7,6 +8,8 @@ import com.ericlam.mc.eldgui.lifecycle.PreDestroyView;
 import com.ericlam.mc.eldgui.view.BukkitView;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
+
+import java.util.Map;
 
 
 @UIController("main")
@@ -17,10 +20,10 @@ public class MainController {
         return new BukkitView<>(MainView.class, greeting);
     }
 
-    @MyOwnFilter(type = ClickType.MIDDLE) // 中鍵點擊才會被觸發
-    @ClickMapping(pattern = 'A', view = MainView.class)
-    public void onClickA(Player player) {
-        player.sendMessage("activated !!!!");
+    @ClickMapping(pattern = 'B', view = MainView.class)
+    public void onSubmit(Player player, @MapAttribute('A') Map<String, Object> map) {
+        var passwordHashed = (String) map.get("password");
+        player.sendMessage(passwordHashed == null ? "null" : passwordHashed);
     }
 
 
