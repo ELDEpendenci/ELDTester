@@ -50,6 +50,10 @@ public class TesterRegistry implements ComponentsRegistry {
 
                 cc.command(TestBookDeleteCommand.class);
 
+                cc.command(TestBookGenerateCommand.class);
+
+                cc.command(TestBookPageCommand.class);
+
             });
 
             c.command(TestSchedulerCommand.class, cc ->{

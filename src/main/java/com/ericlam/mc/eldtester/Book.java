@@ -17,4 +17,15 @@ public class Book extends GroupConfiguration {
     public int pages;
     public List<String> contents;
 
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", description='" + description + '\'' +
+                ", pages=" + pages +
+                ", contents=" + contents +
+                '}';
+    }
 }

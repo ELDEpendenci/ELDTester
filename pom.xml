@@ -14,6 +14,10 @@
             <url>https://nexus.chu77.xyz/repository/plugins/</url>
         </repository>
         <repository>
+            <id>nexus-pre</id>
+            <url>https://nexus.chu77.xyz/repository/pre-release/</url>
+        </repository>
+        <repository>
             <id>papermc</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
@@ -30,7 +34,7 @@
         <dependency>
             <groupId>org.eldependenci</groupId>
             <artifactId>eldependenci-framework</artifactId>
-            <version>0.1.3</version>
+            <version>0.1.4</version>
             <!-- scope>provided</scope -->
             <!--
             <scope>system</scope>
