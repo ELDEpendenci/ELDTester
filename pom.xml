@@ -13,10 +13,10 @@
             <id>nexus</id>
             <url>https://nexus.chu77.xyz/repository/plugins/</url>
         </repository>
-        <repository>
+        <!--repository>
             <id>nexus-pre</id>
             <url>https://nexus.chu77.xyz/repository/pre-release/</url>
-        </repository>
+        </repository -->
         <repository>
             <id>papermc</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
