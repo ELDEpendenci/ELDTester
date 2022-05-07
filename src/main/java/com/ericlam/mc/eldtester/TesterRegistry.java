@@ -64,6 +64,8 @@ public class TesterRegistry implements ComponentsRegistry {
 
                 cc.command(TestSchedulerThreeCommand.class);
 
+                cc.command(TestSchedulerFourCommand.class);
+
             });
 
             c.command(TestLogCommand.class);

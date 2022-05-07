@@ -6,39 +6,44 @@
 
     <groupId>com.ericlam.mc</groupId>
     <artifactId>ELDTester</artifactId>
-    <version>0.1.5</version>
+    <version>0.1.6</version>
 
     <repositories>
-        <repository>
-            <id>nexus</id>
-            <url>https://nexus.chu77.xyz/repository/plugins/</url>
-        </repository>
-        <!--repository>
-            <id>nexus-pre</id>
-            <url>https://nexus.chu77.xyz/repository/pre-release/</url>
-        </repository -->
         <repository>
             <id>papermc</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/ELDependenci/eldependenci</url>
+        </repository>
+        <repository>
+            <id>github-sql</id>
+            <url>https://maven.pkg.github.com/ELDependenci/eldependenci-sql</url>
+        </repository>
+        <repository>
+            <id>github-mvc</id>
+            <url>https://maven.pkg.github.com/ELDependenci/eldependenci-mvc</url>
+        </repository>
     </repositories>
+
 
 
     <dependencies>
         <dependency>
-            <groupId>com.destroystokyo.paper</groupId>
+            <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <version>1.18.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.eldependenci</groupId>
             <artifactId>eldependenci-framework</artifactId>
-            <version>0.1.4</version>
-            <!-- scope> provided</scope -->
+            <version>0.1.5</version>
+            <!-- scope> provided</scope-->
 
             <scope>system</scope>
-            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eldependenci-framework/target/eldependenci-framework-0.1.5.jar</systemPath>
+            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eldependenci-framework/target/eldependenci-framework-0.1.6.jar</systemPath >
 
         </dependency>
 
@@ -52,7 +57,7 @@
         <dependency>
             <groupId>org.eldependenci</groupId>
             <artifactId>eldependenci-sql</artifactId>
-            <version>0.0.5</version>
+            <version>0.0.6</version>
             <scope>provided</scope>
             <!--
             <scope>system</scope>
@@ -97,8 +102,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>18</source>
+                    <target>18</target>
                 </configuration>
             </plugin>
         </plugins>

@@ -19,6 +19,11 @@ public class UserJpaService implements UserService {
     }
 
     @Override
+    public void saveOrUpdate(User user) {
+
+    }
+
+    @Override
     public Optional<User> findByUsername(String username) {
         return userRepository.findById(username);
     }

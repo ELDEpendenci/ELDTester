@@ -6,6 +6,8 @@ public interface UserService {
 
     void save(User user);
 
+    void saveOrUpdate(User user);
+
     Optional<User> findByUsername(String username);
 
     Iterable<User> findAll();

@@ -22,6 +22,18 @@ public class UserEMService implements UserService {
     }
 
     @Override
+    public void saveOrUpdate(User user) {
+        EntityManager entityManager = entityManagerProvider.get();
+        entityManager.getTransaction().begin(); // 打開連接
+        if (entityManager.find(User.class, user.username) != null) {
+            entityManager.merge(user);
+        }else{
+            entityManager.persist(user);
+        }
+        entityManager.getTransaction().commit(); // 關閉連接並提交
+    }
+
+    @Override
     public Optional<User> findByUsername(String username) {
         EntityManager entityManager = entityManagerProvider.get();
         return Optional.ofNullable(entityManager.find(User.class, username)); // 使用 primary key 搜索
