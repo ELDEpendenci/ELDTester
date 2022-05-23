@@ -1,10 +1,10 @@
 package com.ericlam.mc.eldtester;
 
 import chu77.eldependenci.sql.SQLInstallation;
+import com.ericlam.mc.eld.BukkitManagerProvider;
+import com.ericlam.mc.eld.ELDBukkit;
 import com.ericlam.mc.eld.ELDBukkitPlugin;
-import com.ericlam.mc.eld.ManagerProvider;
 import com.ericlam.mc.eld.ServiceCollection;
-import com.ericlam.mc.eld.annotations.ELDPlugin;
 import com.ericlam.mc.eldgui.MVCInstallation;
 import com.ericlam.mc.eldtester.gui.*;
 import com.ericlam.mc.eldtester.sql.*;
@@ -13,7 +13,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import java.util.Map;
 
 
-@ELDPlugin(
+@ELDBukkit(
         registry = TesterRegistry.class,
         lifeCycle = TesterLifeCycle.class
 )
@@ -21,7 +21,8 @@ public class ELDTester extends ELDBukkitPlugin {
 
 
     @Override
-    protected void bindServices(ServiceCollection serviceCollection) {
+    public void bindServices(ServiceCollection serviceCollection) {
+
         serviceCollection.addConfiguration(TestConfig.class);
         serviceCollection.addGroupConfiguration(Book.class);
         serviceCollection.addGroupConfiguration(GUITemplate.class);
@@ -45,15 +46,14 @@ public class ELDTester extends ELDBukkitPlugin {
         MVCInstallation mvc = serviceCollection.getInstallation(MVCInstallation.class);
         mvc.registerControllers(MainController.class); // 註冊 Controller
         mvc.registerQualifier(MyOwnFilter.class, (interactEvent, pattern, myOwnFilter) -> {
-            if (!(interactEvent instanceof InventoryClickEvent)) return false;
-            var clickEvent = (InventoryClickEvent) interactEvent;
+            if (!(interactEvent instanceof InventoryClickEvent clickEvent)) return false;
             return clickEvent.getClick() == myOwnFilter.type();
         });
         mvc.addComponentFactory(PasswordFieldFactory.class, PasswordFieldFactoryImpl.class);
     }
 
     @Override
-    protected void manageProvider(ManagerProvider provider) {
+    protected void manageProvider(BukkitManagerProvider bukkitManagerProvider) {
 
     }
 }

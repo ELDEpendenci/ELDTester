@@ -6,7 +6,7 @@
 
     <groupId>com.ericlam.mc</groupId>
     <artifactId>ELDTester</artifactId>
-    <version>0.1.6</version>
+    <version>0.2.0-SNAPSHOT</version>
 
     <repositories>
         <repository>
@@ -30,6 +30,14 @@
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.3</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
@@ -38,21 +46,21 @@
         </dependency>
         <dependency>
             <groupId>org.eldependenci</groupId>
-            <artifactId>eldependenci-framework</artifactId>
-            <version>0.1.5</version>
-            <!-- scope> provided</scope-->
+            <artifactId>eldependenci-bukkit</artifactId>
+            <version>2.0.4-SNAPSHOT</version>
+            <scope> provided</scope>
 
-            <scope>system</scope>
-            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eldependenci-framework/target/eldependenci-framework-0.1.6.jar</systemPath >
+            <!-- scope>system</scope>
+            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eldependenci-framework/target/eldependenci-framework-0.1.6.jar</systemPath -->
 
         </dependency>
 
-        <dependency>
+        <!-- dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
             <version>1</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency -->
 
         <dependency>
             <groupId>org.eldependenci</groupId>

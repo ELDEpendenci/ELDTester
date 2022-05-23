@@ -1,9 +1,11 @@
 package com.ericlam.mc.eldtester;
 
-import com.ericlam.mc.eld.registrations.CommandRegistry;
-import com.ericlam.mc.eld.registrations.ComponentsRegistry;
-import com.ericlam.mc.eld.registrations.ListenerRegistry;
+import com.ericlam.mc.eld.bukkit.CommandNode;
+import com.ericlam.mc.eld.bukkit.ComponentsRegistry;
+import com.ericlam.mc.eld.registration.CommandRegistry;
+import com.ericlam.mc.eld.registration.ListenerRegistry;
 import com.ericlam.mc.eldtester.command.*;
+import org.bukkit.event.Listener;
 
 import java.util.List;
 
@@ -11,7 +13,13 @@ public class TesterRegistry implements ComponentsRegistry {
 
 
     @Override
-    public void registerCommand(CommandRegistry commandRegistry) {
+    public void registerListeners(ListenerRegistry<Listener> listenerRegistry) {
+        listenerRegistry.listeners(List.of(TestListeners.class));
+    }
+
+
+    @Override
+    public void registerCommand(CommandRegistry<CommandNode> commandRegistry) {
         commandRegistry.command(TestCommand.class, c -> {
 
             c.command(TestGUICommand.class);
@@ -40,7 +48,7 @@ public class TesterRegistry implements ComponentsRegistry {
 
             c.command(TestSleepCommand.class);
 
-            c.command(TestBookCommand.class, cc ->{
+            c.command(TestBookCommand.class, cc -> {
 
                 cc.command(TestBookCheckCommand.class);
 
@@ -56,7 +64,7 @@ public class TesterRegistry implements ComponentsRegistry {
 
             });
 
-            c.command(TestSchedulerCommand.class, cc ->{
+            c.command(TestSchedulerCommand.class, cc -> {
 
                 cc.command(TestSchedulerOneCommand.class);
 
@@ -71,16 +79,4 @@ public class TesterRegistry implements ComponentsRegistry {
             c.command(TestLogCommand.class);
         });
     }
-
-    @Override
-    public void registerListeners(ListenerRegistry listenerRegistry) {
-        listenerRegistry.listeners(List.of(
-                TestListeners.class
-        ));
-        listenerRegistry.ELDListeners(List.of(
-                TestELDListener.class
-        ));
-    }
-
-
 }

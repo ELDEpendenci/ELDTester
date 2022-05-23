@@ -2,7 +2,7 @@ package com.ericlam.mc.eldtester.command;
 
 import com.ericlam.mc.eld.annotations.CommandArg;
 import com.ericlam.mc.eld.annotations.Commander;
-import com.ericlam.mc.eld.components.CommandNode;
+import com.ericlam.mc.eld.bukkit.CommandNode;
 import com.ericlam.mc.eldtester.ELDTester;
 import org.bukkit.command.CommandSender;
 

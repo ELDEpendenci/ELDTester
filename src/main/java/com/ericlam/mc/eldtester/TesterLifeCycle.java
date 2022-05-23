@@ -1,10 +1,10 @@
 package com.ericlam.mc.eldtester;
 
-import com.ericlam.mc.eld.ELDLifeCycle;
+import com.ericlam.mc.eld.bukkit.ELDLifeCycle;
 import com.ericlam.mc.eld.services.LoggingService;
 import com.ericlam.mc.eldtester.sql.User;
 import com.ericlam.mc.eldtester.sql.UserService;
-import org.bukkit.plugin.PluginLogger;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.inject.Inject;
@@ -20,17 +20,28 @@ public class TesterLifeCycle implements ELDLifeCycle {
     @Inject
     private LoggingService loggingService;
 
+    @Inject
+    @Named("eld-json")
+    private ObjectMapper jsonMapper;
+
+    @Named("eld-yaml")
+    @Inject
+    private ObjectMapper yamlMapper;
+
     @Override
     public void onEnable(JavaPlugin javaPlugin) {
+
+        javaPlugin.getLogger().info("json mapper is null: " + (jsonMapper == null));
+        javaPlugin.getLogger().info("yaml mapper is null: " + (yamlMapper == null));
+
         var exist = userService.existByUsername("1234");
-        javaPlugin.getLogger().info("exist 1234: "+exist);
+        javaPlugin.getLogger().info("exist 1234: " + exist);
         if (exist) {
             userService.deleteById("1234");
             javaPlugin.getLogger().info("after delete: ");
             userService.findAll().forEach(u -> javaPlugin.getLogger().info(u.toString()));
         }
-        javaPlugin.getLogger().info("exist 1234: "+userService.existByUsername("1234"));
-
+        javaPlugin.getLogger().info("exist 1234: " + userService.existByUsername("1234"));
 
 
         // save
@@ -43,7 +54,7 @@ public class TesterLifeCycle implements ELDLifeCycle {
             return user;
         });
 
-        javaPlugin.getLogger().info("current: "+ u);
+        javaPlugin.getLogger().info("current: " + u);
 
         u.firstName = "Eric2";
         u.lastName = "Lam2";
