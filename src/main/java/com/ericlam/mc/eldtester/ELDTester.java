@@ -44,6 +44,7 @@ public class ELDTester extends ELDBukkitPlugin {
         sql.bindJpaRepository(UserRepository.class, CustomARepoImpl.class, CustomBRepoImpl.class);
 
         MVCInstallation mvc = serviceCollection.getInstallation(MVCInstallation.class);
+        mvc.registerMiddleWare(HasPermission.class, PermissionMiddleWare.class);
         mvc.registerControllers(MainController.class); // 註冊 Controller
         mvc.registerQualifier(MyOwnFilter.class, (interactEvent, pattern, myOwnFilter) -> {
             if (!(interactEvent instanceof InventoryClickEvent clickEvent)) return false;
