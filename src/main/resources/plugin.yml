@@ -1,8 +1,5 @@
 name: ELDTester
 main: com.ericlam.mc.eldtester.ELDTester
 version: ${project.version}
-depend: [ELDependenci, ELDependenci-SQL, ELDependenci-MVC]
-api-version: "1.16"
-commands:
-  test:
-    description: test command
+depend: [ELDependenci]
+api-version: "1.21"

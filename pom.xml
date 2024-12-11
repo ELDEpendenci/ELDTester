@@ -6,7 +6,7 @@
 
     <groupId>com.ericlam.mc</groupId>
     <artifactId>ELDTester</artifactId>
-    <version>0.2.0-SNAPSHOT</version>
+    <version>2.0.5-SNAPSHOT</version>
 
     <repositories>
         <repository>
@@ -47,56 +47,9 @@
         <dependency>
             <groupId>org.eldependenci</groupId>
             <artifactId>eldependenci-bukkit</artifactId>
-            <version>2.0.3</version>
+            <version>2.0.5-SNAPSHOT</version>
             <scope> provided</scope>
-
-            <!-- scope>system</scope>
-            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci/eldependenci-framework/target/eldependenci-framework-0.1.6.jar</systemPath -->
-
         </dependency>
-
-        <!-- dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
-            <scope>provided</scope>
-        </dependency -->
-
-        <dependency>
-            <groupId>org.eldependenci</groupId>
-            <artifactId>eldependenci-sql</artifactId>
-            <version>0.0.7</version>
-            <scope>provided</scope>
-            <!--
-            <scope>system</scope>
-            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci-sql/eldependenci-sql/target/eldependenci-sql-0.0.5.jar</systemPath>
-            -->
-        </dependency>
-        <dependency>
-            <groupId>org.eldependenci</groupId>
-            <artifactId>eldependenci-mvc</artifactId>
-            <version>0.1.5</version>
-            <scope>provided</scope>
-            <!--
-            <scope>system</scope>
-            <systemPath>P:/Java/Minecraft-Plugins/Public/ELDependenci-MVC/eldependenci-mvc/target/eldependenci-mvc-0.1.5.jar</systemPath>
-            -->
-        </dependency>
-
-        <!--
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.5.5.Final</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>2.5.3</version>
-            <scope>provided</scope>
-        </dependency>
-        -->
 
     </dependencies>
 
@@ -114,8 +67,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>18</source>
-                    <target>18</target>
+                    <source>21</source>
+                    <target>21</target>
                 </configuration>
             </plugin>
         </plugins>
