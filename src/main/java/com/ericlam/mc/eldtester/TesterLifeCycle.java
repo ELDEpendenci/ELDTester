@@ -16,6 +16,12 @@ public class TesterLifeCycle implements ELDLifeCycle {
 		var client = factory.createClient("Eric");
 		client.sayHello();
 		client.sayBye();
+
+		var client2 = factory.createHelloClient("Leo");
+		client2.sayHello();
+
+		var client3 = factory.createByeClient("PuiPui");
+		client3.sayBye();
 	}
 
 	@Override
