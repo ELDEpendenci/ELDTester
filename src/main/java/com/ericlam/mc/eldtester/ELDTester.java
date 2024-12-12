@@ -1,7 +1,5 @@
 package com.ericlam.mc.eldtester;
 
-import java.util.Map;
-
 import com.ericlam.mc.eld.BukkitManagerProvider;
 import com.ericlam.mc.eld.ELDBukkit;
 import com.ericlam.mc.eld.ELDBukkitPlugin;
@@ -14,7 +12,7 @@ public class ELDTester extends ELDBukkitPlugin {
 
 	@Override
 	public void bindServices(ServiceCollection serviceCollection) {
-		serviceCollection.bindFactory(ClientFactory.class, Map.of(Client.class, TestClient.class));
+		serviceCollection.bindFactory(ClientFactory.class, TestClient.class, HelloClient.class, ByeClient.class);
 	}
 
 	@Override

@@ -1,8 +1,10 @@
 package com.ericlam.mc.eldtester;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
-public class HelloClient {
+@Named("hello")
+public class HelloClient implements SayClient {
 
 	@Inject
 	private HelloService helloService;
@@ -13,7 +15,9 @@ public class HelloClient {
 		this.name = name;
 	}
 
-	public void sayHello() {
+	@Override
+	public void say() {
 		helloService.sayHello(name);
 	}
+
 }

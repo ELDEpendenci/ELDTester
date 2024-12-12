@@ -13,15 +13,15 @@ public class TesterLifeCycle implements ELDLifeCycle {
 
 	@Override
 	public void onEnable(JavaPlugin javaPlugin) {
-		var client = factory.createClient("Eric");
+		Client client = factory.createClient("Eric");
 		client.sayHello();
 		client.sayBye();
 
-		var client2 = factory.createHelloClient("Leo");
-		client2.sayHello();
+		SayClient sayClient = factory.createHelloClient("Leo");
+		sayClient.say();
 
-		var client3 = factory.createByeClient("PuiPui");
-		client3.sayBye();
+		sayClient = factory.createByeClient("PuiPui");
+		sayClient.say();
 	}
 
 	@Override
